@@ -1,13 +1,13 @@
 // Sample client module
 
 // Load the client library
-var ModuleClient = require('../lib/BoxClient');
+var BoxClient = require('../lib/BoxClient');
 // Set the API handles
 var api = {
 	'callMe':callMe
 }
 // Instance the client lib with the API handles
-var client = new ModuleClient(api);
+var client = new BoxClient(api);
 
 // Send a message to the host
 client.send("Hello Host!");
