@@ -16,6 +16,6 @@ client.send("Hello Host!");
 client.throw("!!!false alarm!!!");
 
 // This handle gets called for host messages
-function callMe(a) {
-	console.log("Game2 was called with one param: " + a);
+function callMe(a,b) {
+	console.log("Game2 was called with two params: " + a + " and " + b);
 }

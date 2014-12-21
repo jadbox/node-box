@@ -18,9 +18,9 @@ host.start('game2', __dirname + '/Game2.js', onError);
 // Register message handler
 host.on('game2', onGame2Message);
 
-// Call the game2's handler callMe
-host.send('game1', 'callMe', [2, true]);
-host.send('game2', 'callMe', ["Hello World"]);
+// Call client module handler with parameters:
+host.send('game1', 'callMe', ["Hello World"]);
+host.send('game2', 'callMe', [2, true]);
 
 // Kill the client, as it will continue to run otherwise.
 host.kill('game1');
