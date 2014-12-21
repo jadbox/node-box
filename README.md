@@ -6,7 +6,7 @@ This is a Node library that dynamically loads module JS files and has a two-way 
 
 
 ## Features
-- Runs each module in its own process, keeping operations block-free from other modules!
+- Runs each module in its own Node process
 - Client modules are proper child-processes to the host, aiding monitoring and debugging.
 - Modules have a full node environment, including stdout.
 - Modules run in a complete isolated environment and cannot conflict with eachother.
