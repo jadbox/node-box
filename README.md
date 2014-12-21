@@ -32,7 +32,7 @@ host.start('game1', __dirname + '/Game1.js', onError);
 // Register message handler
 host.on('game1', function(msg) { } );
 
-// Call registered module handler with parameters:
+// Call client module handler with parameters:
 host.send('game1', 'callMe', [2, true]);
 
 // Kill the client, as it will continue to run otherwise.
