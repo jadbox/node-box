@@ -2,7 +2,7 @@
 By: Jonathan Dunlap
 12/21/2014
 
-A Node.js sandbox module loader with event pipe. Each client module runs in its own process (blocking-free) and communicates by message passing.
+This is a Node library that dynamically loads module JS files and has a two-way communication channel. Each client module runs in its own complete and sandboxed process, and it is blocking-free from other running modules.
 
 
 ## Features
