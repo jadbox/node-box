@@ -9,10 +9,10 @@ This is a Node library that dynamically loads module JS files and has a two-way 
 - Runs each module in its own Node process
 - Client modules are proper child-processes to the host, aiding monitoring and debugging.
 - Modules have a full node environment, including stdout.
-- Modules run in a complete isolated environment and cannot conflict with eachother.
+- Modules run in a complete isolated environment and cannot conflict in local or global namespaces.
 - Modules and Host can communicate bi-directionally
 - Modules can throw errors to the host.
-- The host can directly start and kill modules dynamically
+- The host can directly start and kill modules dynamically.
 
 
 ## Example
@@ -39,7 +39,7 @@ host.send('game1', 'callMe', [2, true]);
 host.kill('game1');
 
 ```
-Example Client (called Game1):
+Example Client (file: Game1.js):
 ```javascript
 // Set the API handles
 var api = {
