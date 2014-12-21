@@ -4,28 +4,27 @@
 // * Clients communicate between host with messages
 // By Jonathan Dunlap
 
-var ModuleLoader = require('../lib/BoxHost');
+var BoxHost = require('../lib/BoxHost');
 
-// Instance the ModuleLoader to load clients
-var ml = new ModuleLoader();
+// Instance the BoxHost to load clients
+var host = new BoxHost();
 
 // Load and start Game2.js module
 // Register the file to ID 'game2'
 // Register the error handler onError
-ml.start('game1', __dirname + '/Game1.js', onError);
-ml.start('game2', __dirname + '/Game2.js', onError);
+host.start('game1', __dirname + '/Game1.js', onError);
+host.start('game2', __dirname + '/Game2.js', onError);
 
 // Register message handler
-ml.on('game1', onGame1Message);
-ml.on('game2', onGame2Message);
+host.on('game2', onGame2Message);
 
 // Call the game2's handler callMe
-ml.send('game1', 'callMe', [2, true]);
-ml.send('game2', 'callMe', ["Hello World"]);
+host.send('game1', 'callMe', [2, true]);
+host.send('game2', 'callMe', ["Hello World"]);
 
 // Kill the client, as it will continue to run otherwise.
-ml.kill('game1');
-ml.kill('game2');
+host.kill('game1');
+host.kill('game2');
 
 // Message handles are divided into their own handles
 function onGame1Message(msg) {
